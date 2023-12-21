@@ -25,7 +25,7 @@ Write below the actions you took on each step and the results you obtained.
 Use the project in [tp3-balanced-strings](../code/tp3-balanced-strings) to complete this exercise.
 
 ## Answer
-### Basic structure
+## Basic structure
 
 1. `isBalanced` method in `StringUtils` class: checks whether a given string contains balanced grouping symbols {}, [], () according to the specified rules. 
 2. test methods in `StringUtilsTest.java` class: validate the functionality of the `isBalanced` method by covering various scenarios and edge cases.
@@ -35,11 +35,11 @@ Use the project in [tp3-balanced-strings](../code/tp3-balanced-strings) to compl
    - `testUnbalancedCases`: Tests cases with unbalanced symbols that should return false.
    - `testNestedCases`: Tests cases with nested symbols to ensure correct handling of nested structures.
 
-### Questions
+## Questions
 
-#### 1. Use input space partitioning to design an initial set of inputs. Explain below the characteristics and partition blocks you identified.
+### 1. Use input space partitioning to design an initial set of inputs. Explain below the characteristics and partition blocks you identified.
 
-##### Characteristics
+#### Characteristics
 1. Empty string: Test if an empty string is considered balanced.
 2. Single type of grouping symbols: Test strings containing only one type of grouping symbols {}, [], ().
 3. Multiple types of grouping symbols: Test strings containing multiple types of grouping symbols.
@@ -47,7 +47,7 @@ Use the project in [tp3-balanced-strings](../code/tp3-balanced-strings) to compl
 5. Unbalanced strings: Test strings that break the balance by having mismatched or improperly nested grouping symbols.
 6. Nested grouping symbols: Test strings with nested grouping symbols to check if the method handles nested structures correctly.
 
-##### Partition Blocks
+#### Partition Blocks
 1. Empty String Partition:
    - "" - an empty string
 2. Single Type of Symbols Partition:
@@ -63,5 +63,7 @@ Use the project in [tp3-balanced-strings](../code/tp3-balanced-strings) to compl
 6. Nested Symbols Partition:
    - "{[()]}", "({[()]})", "{{[()]}}", etc. - strings with nested symbols
 
-#### 2. Evaluate the statement coverage of the test cases designed in the previous step. If needed, add new test cases to increase the coverage. Describe below what you did in this step.
+### 2. Evaluate the statement coverage of the test cases designed in the previous step. If needed, add new test cases to increase the coverage. Describe below what you did in this step.
+For this exercise I used **"Run with Coverage"** feature in IntelliJ IDEA to evaluate the statement coverage of the test suite for the isBalanced method. Here is the result:
+![img.png](img.png)
 
