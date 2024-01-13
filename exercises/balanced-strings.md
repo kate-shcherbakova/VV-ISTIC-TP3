@@ -65,5 +65,25 @@ Use the project in [tp3-balanced-strings](../code/tp3-balanced-strings) to compl
 
 ### 2. Evaluate the statement coverage of the test cases designed in the previous step. If needed, add new test cases to increase the coverage. Describe below what you did in this step.
 For this exercise I used **"Run with Coverage"** feature in IntelliJ IDEA to evaluate the statement coverage of the test suite for the isBalanced method. Here is the result:
-![img.png](img.png)
 
+![coverage](coverage.png)
+
+### 3. If you have in your code any predicate that uses more than two boolean operators, check if the test cases written so far satisfy Base Choice Coverage. If needed, add new test cases. Describe below how you evaluated the logic coverage and the new test cases you added.
+A `Base Choice Coverage` evaluation means that the logical condition is thoroughly tested, covering all possible combinations of boolean values (true/false) for each condition, which is the case in my `isBalanced` method. 
+
+To review test cases for logic coverage I need to examine the existing test cases in `StringUtilsTest`. In order to do this, I need to check if the tests cover scenarios where:
+- `ch` matches with closing symbols (`}, ], )`) and opening matches with their corresponding opening symbols (`{, [, (`).
+- `ch` matches with closing symbols but opening does not match with their corresponding opening symbols.
+
+After evaluating `Base Choice Coverage`, it turns out that the test suite achieves it for all predicates, covering all possible combinations of boolean values. 
+
+### 4. Use PIT to evaluate the test suite you have so far. Describe below the mutation score and the live mutants. Add new test cases or refactor the existing ones to achieve a high mutation score.
+
+Mutation testing involves creating mutated versions of the code (mutants) and checking if the test suite can detect these mutations. A high mutation score indicates a robust test suite.
+
+To run PIT I used the `mvn clean install org.pitest:pitest-maven:mutationCoverage` command in the `tp3-balanced-strings` folder. Result: 
+
+![mutation-score](mutation-score.jpg)
+
+#### Mutation Score
+The mutation score is 100%, indicating that all generated mutants were killed by the test suite. This is excellent, as it suggests that the tests are effective in detecting artificial defects.
