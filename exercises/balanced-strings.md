@@ -66,7 +66,7 @@ Use the project in [tp3-balanced-strings](../code/tp3-balanced-strings) to compl
 ### 2. Evaluate the statement coverage of the test cases designed in the previous step. If needed, add new test cases to increase the coverage. Describe below what you did in this step.
 For this exercise I used **"Run with Coverage"** feature in IntelliJ IDEA to evaluate the statement coverage of the test suite for the isBalanced method. Here is the result:
 
-![coverage](coverage.png)
+![coverage](images/coverage.png)
 
 ### 3. If you have in your code any predicate that uses more than two boolean operators, check if the test cases written so far satisfy Base Choice Coverage. If needed, add new test cases. Describe below how you evaluated the logic coverage and the new test cases you added.
 A `Base Choice Coverage` evaluation means that the logical condition is thoroughly tested, covering all possible combinations of boolean values (true/false) for each condition, which is the case in my `isBalanced` method. 
@@ -83,7 +83,7 @@ Mutation testing involves creating mutated versions of the code (mutants) and ch
 
 To run PIT I used the `mvn clean install org.pitest:pitest-maven:mutationCoverage` command in the `tp3-balanced-strings` folder. Result: 
 
-![mutation-score](mutation-score.jpg)
+![mutation-score](images/mutation-score.jpg)
 
 #### Mutation Score
 The mutation score is 100%, indicating that all generated mutants were killed by the test suite. This is excellent, as it suggests that the tests are effective in detecting artificial defects.
